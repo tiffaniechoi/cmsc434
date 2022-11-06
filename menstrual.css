@@ -1,5 +1,6 @@
 body {
     background: #E5E5E5;
+    font-family: Raleway;
 }
 
 #iphone{
@@ -41,7 +42,6 @@ body {
     position: absolute;
     left: 61px;
     top: 10px;
-    font-family: Raleway;
     text-align: left;
     font-size: 24px;
     letter-spacing: -0.5;
