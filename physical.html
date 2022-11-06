@@ -26,9 +26,35 @@
                 <br><br><div class="data"> 1,200 calories  &emsp;&emsp;&emsp;&emsp;14582 steps</div>
             </div>
 
-            <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Add Workout</button> &emsp;&ensp;;
+            <button class="btn" onclick="openForm()"><i class="fa-solid fa-circle-plus"></i>&ensp;Add Workout</button> &emsp;&ensp;
             <button class="btn"><i class="fa-solid fa-clipboard-list"></i>&ensp;Workout List</button>
-        </div>
+            <div class="form-popup" id="myForm">
+                <form  class="form-container" id="workoutForm">
+                  <h1>Workout Information</h1> 
+                  <br>
+                 
+                    <label for="activity"><b>Workout Activity</b></label>
+                    <input type="text" placeholder="Enter Workout Activity" name="workoutActivity" id="activity" required>
+                
+                    <label for="duration"><b>Workout Duration</b></label>
+                    <input type="text" placeholder="Enter Workout Duration" name="workoutDuration" id="duration" required>
+                
+                    <button type="button" class="submit"  onclick="openSummary()">Submit</button>
+                    <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                </form>
+    
+            </div>
+
+            <div class="workoutSummary-popup" id="workoutSummary">
+                <div class="summary-container">
+                    <h1>Workout Summary</h1> 
+                    <br>
+                    <div id="display"></div>
+                    <button type="button" class="cancel" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+            
+
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
@@ -48,5 +74,31 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
+    }
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function openSummary() {
+        closeForm();
+        let activity = document.getElementById("activity").value;
+        let duration = document.getElementById("duration").value;
+        document.getElementById("workoutForm").reset();
+        document.querySelector("#display").innerHTML = "Today's workout: " + activity + "<br> Duration: " + duration
+        document.getElementById("workoutSummary").style.display = "block";
+        document.getElementById("summary-container").style.display = "block";
+        document.getElementById("workoutForm").reset()
+    
+    
+        
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    function closePopup() {
+        document.getElementById("workoutSummary").style.display = "none";
     }
 </script>
