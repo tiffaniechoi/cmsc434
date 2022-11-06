@@ -7,7 +7,6 @@ body {
     width:375px;
     margin-top:399.5px;
     position:absolute;
-    visibility:hidden;
 }
 
 #iphone{
@@ -34,14 +33,14 @@ body {
 }
 
 #icon{ 
-    width: 45px;
-    height: 52px;
+    font-size: 35px;
     position: absolute;
     left: 0px;
     top: 0px;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    transform:translate(4px, 6px);
+  }
 #title{
     color: #c2747e;;width: 241px;
     height: 32px;
@@ -156,7 +155,8 @@ body {
 }
 
 .periodEntry {
-    background-color: #ff8686;
+    background-color:#c48aa3;
+    color: #653c4b;
     border-radius:30px;
     text-align:center;
     width:180px;
@@ -168,6 +168,16 @@ body {
     position: absolute;
     z-index: 9;
 }
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+.periodEntry input[type=text], .form-container input[type=password] {
+    border: none;
+    background: #f1f1f1;
+  }
 
 input {
     margin-bottom:8px;
