@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Physical</title>
+    <link rel="stylesheet" href="physical.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa614904bb.js" ></script> 
+</head>
+
+<body>
+    <div id ="iphone">
+        <div id="screen">
+            <div id ="banner">
+                <i id="icon" class="fa-solid fa-dumbbell"></i>
+                <span id="title">Physical</span>
+                <img src="images/menu.png" onclick="openNav()" id = "menu">
+            </div>
+
+            <div id="imageScreen">
+                <i id="runner" class="fa-solid fa-person-running"></i>
+                <div id="date">Today: Nov 7, 2022</div>
+            </div>
+
+            <div id="dataDisplay">
+                Active Calories &emsp;&emsp; Distance <br><br><div class="data"> 600 calories  &emsp;&emsp;&emsp;&emsp;&emsp;6.3 miles</div><br><br> Resting Calories &emsp;&ensp; Steps
+                <br><br><div class="data"> 1,200 calories  &emsp;&emsp;&emsp;&emsp;14582 steps</div>
+            </div>
+
+            <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Add Workout</button> &emsp;&ensp;;
+            <button class="btn"><i class="fa-solid fa-clipboard-list"></i>&ensp;Workout List</button>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="menstrual.html">Menstrual</a>
+            <a href="#">Mental</a>
+            <a href="#">Nutrition</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("title").style.opacity = "0";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("title").style.opacity = "1";
+    }
+</script>
