@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My Health App</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"" rel=" stylesheet">
+    <script src="https://kit.fontawesome.com/aa614904bb.js"></script>
+  </head>
+  <body>
+    <div id="iphone">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home</a><a href="mental.html">Mental</a>
+        <a href="menstrual.html">Menstrual</a><a href="physical.html">Physical</a>
+        <a href="nutrition.html">Nutrition</a></div>
+      <div id="screen">
+        <div id="banner">
+            <i id="spa" class="fa-solid fa-spa" style="color:black"></i>
+            <span id="title"><b>Mental</b></span><img src="images/menu.png" onclick="openNav()" id="menu"></div><br><br><br>
+        <div class="home">
+          <div id="date">Today: Nov 7, 2022</div><br>
+          &ensp;
+                <i id="fa" class="fa-regular fa-face-smile" style="color: gray;"></i>
+                <i id="fa" class="fa-regular fa-face-meh" style="color: gray;"></i>
+                <i id="fa" class="fa-regular fa-face-sad-cry" style="color: #c88eac;"></i>
+                <i id="fa" class="fa-regular fa-face-angry" style="color: gray;"></i>
+                <br><br>
+                <div class="data">
+                    &ensp;&ensp; &ensp;&ensp;&ensp;&ensp; <span style="color: #653c4b">Current Mood: Sad</span> <br><br>
+                </div>
+                <div id="dataDisplay1">
+                    <span style="color: #653c4b;">Upcoming Appointments:</span> <br> <br>Doctor's Appointment <br>
+                        <span style="color: #653c4b">When:</span> Dec 22nd, 2022 at 12pm <br>
+                            <span style="color: #653c4b">Where:</span> 4200 Laurel Ave <br>
+                </div><br>
+
+                <div id="dataDisplay">
+                    Entry <br><br>
+                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Daily Journal Entry</button>&ensp;
+                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Create Appointment</button>
+                    <br><br>
+                    Reminders<br><br>
+                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;View Appointments</button> &ensp;
+                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;View Tasks</button> &emsp;&ensp;
+                </div>
+      </div>
+    </div>
+    
+    </div>
+  </body>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("title").style.opacity = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("title").style.opacity = "1";
+    }
+  </script>

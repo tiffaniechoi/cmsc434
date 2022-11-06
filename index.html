@@ -1,23 +1,79 @@
+<!doctype html>
 <html lang="en">
-          <head>
-            <meta charset="utf-8">
-          
-            <title>434 Health app</title>
-            <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<head>
+    <title>My Health App</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"" rel=" stylesheet">
+    <script src="https://kit.fontawesome.com/aa614904bb.js"></script>
+    <script src="code.js" defer></script> 
+</head>
 
-            <link rel="stylesheet" href="styles.css">
-            
-            <style>
+<body>
+    <div id="iphone">
+        <div id="screen">
+            <div id="banner">
+                <img src="images/the_lifesavers_redcross.png" class="icon">
+                <span id="title" style="color:black;"><strong>My Health</strong></span>
+                <img src="images/menu.png" onclick="openNav()" id="menu">
+            </div>
+            <br><br><br><br>
+            <div class="text">
+              <span class="top-left">Menstrual</span>
+              <span class="top-right">Physical</span>
+              <span class="bottom-left">Mental</span>
+              <span class="bottom-right">Nutrition</span>
+            </div>
+            <table class="buttons">
+
+              <tr>
+                <td>
+                  <button onclick="location.href='menstrual.html';" class="button button1"><img src="images/the_lifesavers_testicles.png" class="icon icons"></button>
+                </td>
+                <td>
+                  <button onclick="location.href='physical.html';" class="button button2"><img src="images/the_lifesavers_electrocardiogram_icon.png" class="icon icons"></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="location.href='mental.html';" class="button button3"><i id="spa_home" class="fa-solid fa-spa"></i>
+                  </button>
+
+                </td>
+                <td>
+                  <button onclick="location.href='nutrition.html';" class="button button4"><img src="images/the_lifesavers_pills.png" class="icon icons"></button>
+                </td>
+              </tr>
+            </table>
+            <div class="home">
+              
+              <br>
+              <u>Todays Status</u> <br>
+              Calories Burned: &nbsp;<span class="data">600 cal</span><br>
+              Miles Walked: &nbsp;<span class="data">5.1 miles</span><br>
+              Avg Heart Rate: &nbsp;<span class="data">60 bpm</span><br>
            
-              body {background: #E5E5E5; }
-            </style>
-          
-          </head>
-          
-          <body>
-            <div class=e503_1509><div class=e503_1512><div class=e503_1513><div  class="e503_1575"></div><span  class="e503_1514"> MyHealth</span><div class=e503_1576><div  class="e503_1577"></div><div  class="e503_1578"></div><div  class="e503_1579"></div></div></div><div class=e503_1603><div class=e503_1604><div class=e503_1605><div class=e503_1606><span  class="ei503_1606_47_0">Menstrual</span></div><div  class="e503_1607"></div></div><div class=e503_1608><div class=e503_1609><span  class="ei503_1609_47_0">Physical</span></div><div  class="e503_1610"></div></div><div class=e503_1611><span  class="ei503_1611_47_0">Mental</span></div><div  class="e503_1612"></div><div class=e503_1613><span  class="ei503_1613_47_0">Nutrition</span></div></div><div  class="e503_1614"></div></div><span  class="e505_1320"><b>Todays Status<b><br>
-Calories Burned: 600 cal<br>
-Miles Walked: 5.1 Miles<br>
-Avg Heart Rate: 600 bpm</span></div><div class=e505_1327><div class="ei505_1327_11_103"></div></div></div>
-          </body>
-          </html>
+            
+        </div> 
+        
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="index.html">Home</a>
+          <a href="mental.html">Mental</a>
+          <a href="menstrual.html">Menstrual</a>
+          <a href="physical.html">Physical</a>
+          <a href="nutrition.html">Nutrition</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("title").style.opacity = "0";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("title").style.opacity = "1";
+    }
+</script>
