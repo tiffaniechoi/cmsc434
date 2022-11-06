@@ -9,7 +9,7 @@
 
 <body>
     <div id ="iphone">
-        <div id="screen">
+        <div id="screen" onclick="hideKeyboard()"ß>
             <div id ="banner">
                 <i id="icon" class="fa-solid fa-dumbbell"></i>
                 <span id="title">Physical</span>
@@ -25,22 +25,26 @@
                 Active Calories &emsp;&emsp; Distance <br><br><div class="data"> 600 calories  &emsp;&emsp;&emsp;&emsp;&emsp;6.3 miles</div><br><br> Resting Calories &emsp;&ensp; Steps
                 <br><br><div class="data"> 1,200 calories  &emsp;&emsp;&emsp;&emsp;14582 steps</div>
             </div>
+        
 
             <button class="btn" onclick="openForm()"><i class="fa-solid fa-circle-plus"></i>&ensp;Add Workout</button> &emsp;&ensp;
-            <button class="btn"><i class="fa-solid fa-clipboard-list"></i>&ensp;Workout List</button>
-            <div class="form-popup" id="myForm">
+            <button class="btn" onclick="openWorkoutList()"><i class="fa-solid fa-clipboard-list"></i>&ensp;Workout List</button>
+        </div>
+
+            <div class="form-popup" id="myForm" >
                 <form  class="form-container" id="workoutForm">
                   <h1>Workout Information</h1> 
-                  <br>
+                  <br><br>
                  
                     <label for="activity"><b>Workout Activity</b></label>
-                    <input type="text" placeholder="Enter Workout Activity" name="workoutActivity" id="activity" required>
-                
+                    <input type="text" placeholder="Enter Workout Activity" name="workoutActivity" id="activity" onclick="showKeyboard()" required>
+                    <br><br>
                     <label for="duration"><b>Workout Duration</b></label>
-                    <input type="text" placeholder="Enter Workout Duration" name="workoutDuration" id="duration" required>
-                
-                    <button type="button" class="submit"  onclick="openSummary()">Submit</button>
-                    <button type="button" class="cancel" onclick="closeForm()">Close</button>
+                    <input type="text" placeholder="Enter Workout Duration" name="workoutDuration" id="duration" onclick="showKeyboard()" required>
+                    
+                    <br><br><br><br><br>
+                    <button type="button" class="formbtn"  onclick="openSummary()">Submit</button>
+                    <button type="button" class="formbtn" onclick="closeForm()">Close</button>
                 </form>
     
             </div>
@@ -50,8 +54,29 @@
                     <h1>Workout Summary</h1> 
                     <br>
                     <div id="display"></div>
+                    <br><br><br>
                     <button type="button" class="cancel" onclick="closePopup()">Close</button>
                 </div>
+            </div>
+
+            <div class="workoutList-popup" id="workoutList">
+                <div class="list-container">
+                    <h1>Workout List</h1> 
+                    <ul id="list">
+                        <li>11/6/22<br> Workout Activity: Walking <br> Duration: 30 minutes</li>
+                        <li >11/5/22<br> Workout Activity: Volleyball <br> Duration: 90 minutes</li>
+                        <li>11/1/22<br> Workout Activity: Lifting <br> Duration: 60 minutes</li>
+                        <li>10/25/22<br> Workout Activity: Golf <br> Duration: 120 minutes</li>
+                        <li>10/22/22<br> Workout Activity: Swimming <br> Duration: 30 minutes</li>
+                    </ul>
+            
+                    <br>
+                    <button type="button" class="cancel" onclick="closeListPopup()">Close</button>
+                </div>
+            </div>
+
+            <div id="displayKeyboard">
+                <img src="images/keyboard.png" id="keyboard" onclick="hideKeyboard()">
             </div>
             
 
@@ -59,8 +84,8 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
             <a href="menstrual.html">Menstrual</a>
-            <a href="#">Mental</a>
-            <a href="#">Nutrition</a>
+            <a href="mental.html">Mental</a>
+            <a href="nutrition.html">Nutrition</a>
         </div>
     </div>
 </body>
@@ -84,8 +109,9 @@
         closeForm();
         let activity = document.getElementById("activity").value;
         let duration = document.getElementById("duration").value;
+        newWorkout(activity,duration);
         document.getElementById("workoutForm").reset();
-        document.querySelector("#display").innerHTML = "Today's workout: " + activity + "<br> Duration: " + duration
+        document.querySelector("#display").innerHTML = "<b>Today's workout:</b> <br>" + activity + "<br><br><br> <b>Duration:</b> <br>" + duration + "<br><br> Great Job!"
         document.getElementById("workoutSummary").style.display = "block";
         document.getElementById("summary-container").style.display = "block";
         document.getElementById("workoutForm").reset()
@@ -101,4 +127,68 @@
     function closePopup() {
         document.getElementById("workoutSummary").style.display = "none";
     }
+    function closeListPopup() {
+        document.getElementById("workoutList").style.display = "none";
+    }
+
+    function showKeyboard(){
+        document.getElementById("keyboard").style.display = "block";
+        document.getElementById("displayKeyboard").style.display = "block";
+
+    }
+
+    function hideKeyboard(){
+        document.getElementById("keyboard").style.display = "none";
+        document.getElementById("displayKeyboard").style.display = "none";
+    }
+
+    function openWorkoutList(){
+        document.getElementById("workoutList").style.display = "block";
+        document.getElementById("list-container").style.display = "block";
+    }
+
+    function addWorkout(){
+        var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              myNodelist[i].appendChild(span);
+            }
+            
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+            
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function(ev) {
+              if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+              }
+            }, false);
+            
+            // Create a new list item when clicking on the "Add" button
+          
+    }
+
+    function newWorkout(activity,duration) {
+        var list = document.getElementById("list");
+  var listItem = document.createElement("li");
+  date = new Date();
+year = date.getFullYear();
+month = date.getMonth() + 1;
+day = date.getDate();
+  listItem.innerHTML= month + "/" + day + "/" + year + "<br>" +" Workout Activity: " + activity + "<br> Duration: " + duration// passed the field. 
+  list.insertBefore(listItem, list.firstChild);
+  
+    }
+              
 </script>
+

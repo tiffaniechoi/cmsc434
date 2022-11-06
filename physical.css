@@ -37,7 +37,7 @@ body {
     transform:translate(4px, 6px);
 }
 #title{
-    color: #c2747e;;
+    color: #c2747e;
     width: 241px;
     height: 32px;
     position: absolute;
@@ -151,25 +151,27 @@ body {
 
   /* Darker background on mouse-over */
   .btn:hover {
-    background-color:#c48aa3;
+    background-color: #653c4b;
+    color: #c48aa3;
   }
 
   /* The popup form - hidden by default */
 .form-popup {
     display: none;
     position: absolute;
-    transform: translate(21px,-160px);
+    transform: translate(21px,120px);
     border: 2px solid #653c4b;
     border-radius: 8px;
-    background-color: #ceb5c2;
+    background-color: #f5e6e3;
  
   }
   
   /* Add styles to the form container */
   .form-container {
     width: 300px;
+    height: 480px;
     padding: 10px;
-    background-color: #ceb5c2;
+    background-color: #f5e6e3;
     color: #653c4b;
     padding-left: 20px;
 
@@ -196,56 +198,158 @@ body {
   }
   
   /* Set a style for the submit/login button */
-  .form-container .submit {
+  .form-container .formbtn {
     background-color:#c48aa3;
     color: #653c4b;
-    width: 100px;
+    width: 140px;
     border: 0px;
     border-radius: 5px;
-    padding: 3px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #ceb5c2;
+    
   }
   
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    background-color: #c48aa3;
-    color: #653c4b;
-    width: 100px;
-    border: 0px;
-    border-radius: 5px;
-    padding: 3px;
-  }
+ 
   
   /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
+  .form-container .formbtn:hover, .open-button:hover {
+    background-color: #653c4b;
+    color: #c48aa3;
   }
 
   .workoutSummary-popup {
     display: none;
     position: absolute;
-    transform: translate(21px,-160px);
+    transform: translate(21px,120px);
     border: 2px solid #653c4b;
     border-radius: 8px;
-    background-color: #ceb5c2;
+    background-color: #f5e6e3;
   }
 
   .summary-container {
     width: 300px;
+    height: 480px;
     padding: 10px;
-    background-color: #ceb5c2;
+    background-color: #f5e6e3;
     color: #653c4b;
     padding-left: 20px;
-
+    font-size: 25px;
 
   }
 
 
-  .workoutSummary .cancel {
-    background-color: #c48aa3;
+  .summary-container .cancel {
+    background-color:#c48aa3;
     color: #653c4b;
-    width: 100px;
+    width: 140px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #ceb5c2;
+  }
+
+  .summary-container .cancel:hover {
+    background-color: #653c4b;
+    color: #c48aa3;
+  }
+
+ 
+  #keyboard{
+    position: absolute;
+    display:none;
+    width: 375px;
+    transform: translate(0px,442px);
+    height:250px;
+
+  }
+
+  #displayKeyboard{
+    position: absolute;
+    display: none;
+  }
+
+ 
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li{
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    border-radius: 15px;
+    width:15.6rem;
+    padding: 12px 8px 12px 32px;
+    font-size: 18px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #653c4b;
+    border-radius: 5px;
+    background:#c48aa3;
+    overflow:scroll;
+ 
+  }
+  
+  
+  .addButton{
+    border-color: white;
+    background-color: white;
+    border-radius: 15px;
+    width:6.5rem;
+    height: 2rem;
+  }
+  
+  li:nth-child(odd) {
+    background:#ceb5c2;
+  }
+  
+  
+  
+  .list-container .cancel {
+    background-color:#c48aa3;
+    color: #653c4b;
+    width: 140px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #ceb5c2;
+  }
+  
+  .cancel:hover {
+    background-color: #653c4b;
+    color: #c48aa3;
   }
   
 
-
+  .workoutList-popup {
+    display: none;
+    position: absolute;
+    transform: translate(21px,120px);
+    border: 2px solid #653c4b;
+    border-radius: 8px;
+    background-color: #f5e6e3;
+    overflow: scroll;
   
+  }
+  
+  /* Add styles to the form container */
+  .list-container {
+  
+    width: 300px;
+    height: 480px;
+    padding: 10px;
+    background-color: #f5e6e3;
+    color: #653c4b;
+    padding-left: 20px;
+    overflow: scroll;
+  
+  }
+  
+
