@@ -69,6 +69,36 @@ body {
     font-size: 45px;
 }
 
+#heart_pulse {
+  width: 55px;
+  height: 70px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  font-size: 45px;
+}
+
+#capsules{
+  width: 55px;
+  height: 70px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  font-size: 45px;
+}
+
+#droplet{
+  width: 55px;
+  height: 70px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  font-size: 45px;
+}
+
 #title{
     color: #c88eac;
     width: 241px;
@@ -410,7 +440,8 @@ body {
 
   /* Darker background on mouse-over */
   .btn:hover {
-    background-color:#c48aa3;
+    background-color:#653c4b;
+    color:#ceb5c2;
   }
 
 
