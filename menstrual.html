@@ -1,40 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Photo Viewer</title>
+    <title>Menstrual</title>
     <link rel="stylesheet" href="menstrual.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <script src="code.js" defer></script> 
 </head>
 
 <body>
     <div id ="iphone">
-        <div id="screen">
+        <div id="screen" onClick="closeKeyboard()">
             <div id ="banner">
                 <img src="images/the_lifesavers_testicles.png" id="icon">
                 <span id="title">Menstrual</span>
-                <img src="images/menu.png" onclick="openNav()" id = "menu">
+                <img src="images/menu.png" onclick="openNav()" id="menu">
             </div>
-
+            <div id="content">
+                    <div id="next-period"><h1 id="curr">Current Cycle</h1><br><br>
+                    Period starts <br>tomorrow</div>
+                    <img src = "images/tracker.png" id = "tracker">
+                    <h1 id="month">November</h1>
+                    <img src="images/calendar.png" id="calendar">
+                    <img src="images/track.png" id="track" onClick="openForm()">
+            </div>
         </div>
         <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
             <a href="#">Mental</a>
             <a href="#">Physical</a>
             <a href="#">Nutrition</a>
         </div>
+        <div class="periodEntry" id="myForm">
+            <form>
+                <span class="close" onClick="closeForm()">&times;</span>
+                <label for="bleeding">Bleeding:</label><br>
+                <input type="text" id="bleeding" name="bleeding" onClick="openKeyboard()"><br>
+                <label for="pain">Pain:</label><br>
+                <input type="text" id="pain" name="pain" onClick="openKeyboard()"><br>
+                <label for="energy">Energy:</label><br>
+                <input type="text" id="energy" name="energy" onClick="openKeyboard()"><br>
+                <label for="emotions">Emotions:</label><br>
+                <input type="text" id="emotions" name="emotions" onClick="openKeyboard()"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <img src="images/keyboard.png" id="keyboard">
+
     </div>
 </body>
 
 <script>
+    function closeKeyboard() {
+        document.getElementById('keyboard').style.visibility='hidden';
+    }
+    function openKeyboard(){
+        document.getElementById('keyboard').style.visibility='visible';
+    }
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("title").style.opacity = "0";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+    function closeForm() {
+        document.getElementById('keyboard').style.visibility='hidden';
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("title").style.opacity = "0";
+        document.getElementById("content").style.opacity = "0";
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
     }
 </script>
