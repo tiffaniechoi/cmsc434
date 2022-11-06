@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Health Integration App</title>
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="screen">
+                    <a href="textTab.html"><input type="button" value="Text" id="text" ></a>
+                    <a href="choiceTab.html"><input type="button" value="Choices" id="choices"></a>
+                    <a href="todoTab.html"><input type="button" value="To Do" id="todo"></a>
+                    <br><br>
+                    <h1>CHOICES</h1>
+                    Would you like to input your workout for today?<br />
+                    <label><input type="radio" name="workout">Yes</label><br />
+                    <label><input type="radio" name="workout">No
+                    <br><br>
+                    Select your workout activity  
+                    <br> 
+                    <select id="activity">
+                        <option value="Run" selected="selected">Run</option>
+                        <option value="Walk" >Walk</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Lift Weights" >Lift Weights</option>
+
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Submit Data" onclick="showText()"/>
+            
+                <br><br>
+                <div id="display"></div>
+            </div>
+            <img src="iphone.jpg" alt="iphone" width="50" class="iphoneIMG">
+        </div>
+        <script>
+
+            function showText() {
+                let textElement = document.getElementById("activity");
+                text= textElement.value;
+                document.querySelector("#display").innerHTML = "Your workout for today is: " + text;
+            }
+        </script>
+        
+    </body>
+</html>
