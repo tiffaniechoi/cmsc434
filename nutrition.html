@@ -4,13 +4,14 @@
     <title>Nutrition</title>
     <link rel="stylesheet" href="nutrition.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa614904bb.js"></script>
 </head>
 
 <body>
     <div id ="iphone">
         <div id="screen" onClick="closeKeyboard()">
             <div id ="banner">
-                <img src="images/the_lifesavers_pills.png" id="icon">
+                <i id="icon" class="fa-solid fa-capsules"></i>
                 <span id="title">Nutrition</span>
                 <img src="images/menu.png" onClick="openNav()" id="menu">
             </div>
@@ -62,7 +63,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="width:250px;margin-left:60px;">
                     <div class="col">
                         <table>
                             <tr>
@@ -77,13 +78,7 @@
             
             
         </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
-            <a href="index.html">Home</a>
-            <a href="mental.html">Mental</a>
-            <a href="physical.html">Physical</a>
-            <a href="menstrual.html">Menstrual</a>
-        </div>
+        
         <div class="foodEntry" id="myForm">
             <form>
                 <span class="close" onClick="closeForm()">&times;</span>
@@ -118,6 +113,13 @@
         <img src="images/keyboard.png" id="keyboard" style="display:none;">
 
     </div>
+    <div id="mySidenav" class="sidenav" style="z-index:9;margin-bottom:20px;">
+            <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="mental.html">Mental</a>
+            <a href="physical.html">Physical</a>
+            <a href="menstrual.html">Menstrual</a>
+        </div>
 </body>
 
 <script>
@@ -168,13 +170,11 @@
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("title").style.opacity = "0";
-        document.getElementById("content").style.opacity = "0";
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
-        document.getElementById("content").style.opacity = "1";
     }
 </script>
 

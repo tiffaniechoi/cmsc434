@@ -34,14 +34,14 @@ body {
 }
 
 #icon{ 
-    width: 45px;
-    height: 52px;
+    font-size: 35px;
     position: absolute;
     left: 0px;
     top: 0px;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    transform:translate(4px, 6px);
+  }
 #title{
     color: #c2747e;;
     width: 241px;
@@ -63,7 +63,7 @@ body {
 }
 
 .sidenav {
-    height: 630px; 
+    height: 692px; 
     width: 0; 
     position: absolute; 
     z-index: 1; 
@@ -198,10 +198,10 @@ body {
     font-size:20px;
     border-radius:30px;
     text-align:center;
-    width:400px;
+    width:200px;
     height:200px;;
     padding-top:40px;
-    margin-left:75px;
+    margin-left:80px;
     margin-top:-310px;
     padding-bottom:20px;
     position: absolute;

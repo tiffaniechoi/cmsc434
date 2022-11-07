@@ -4,13 +4,14 @@
     <title>Menstrual</title>
     <link rel="stylesheet" href="menstrual.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa614904bb.js"></script>
 </head>
 
 <body>
     <div id ="iphone">
         <div id="screen" onClick="closeKeyboard()">
             <div id ="banner">
-                <img src="images/the_lifesavers_testicles.png" id="icon">
+                <i id="icon" class="fa-solid fa-droplet"></i>
                 <span id="title">Menstrual</span>
                 <img src="images/menu.png" onclick="openNav()" id="menu">
             </div>
@@ -51,20 +52,20 @@
 
 <script>
     function closeKeyboard() {
-        document.getElementById('keyboard').style.visibility='hidden';
+        document.getElementById('keyboard').style.display='none';
     }
     function openKeyboard(){
-        document.getElementById('keyboard').style.visibility='visible';
+        document.getElementById('keyboard').style.display='block';
     }
 
     function openForm() {
+        document.getElementById('keyboard').style.display='block';
         document.getElementById("myForm").style.display = "block";
-        document.getElementById("title").style.opacity = "0";
         document.getElementById("content").style.opacity = "0";
     }
 
     function closeForm() {
-        document.getElementById('keyboard').style.visibility='hidden';
+        document.getElementById('keyboard').style.display='none';
         document.getElementById("myForm").style.display = "none";
         document.getElementById("title").style.opacity = "1";
         document.getElementById("content").style.opacity = "1";
@@ -73,12 +74,10 @@
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("title").style.opacity = "0";
-        document.getElementById("content").style.opacity = "0";
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
-        document.getElementById("content").style.opacity = "1";
     }
 </script>
