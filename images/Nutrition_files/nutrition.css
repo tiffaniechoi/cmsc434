@@ -7,6 +7,7 @@ body {
     width:375px;
     margin-top:399.5px;
     position:absolute;
+    visibility:hidden;
 }
 
 #iphone{
@@ -33,16 +34,17 @@ body {
 }
 
 #icon{ 
-    font-size: 35px;
+    width: 45px;
+    height: 52px;
     position: absolute;
     left: 0px;
     top: 0px;
     background-repeat: no-repeat;
     background-size: cover;
-    transform:translate(4px, 6px);
-  }
+}
 #title{
-    color: #c2747e;;width: 241px;
+    color: #c2747e;;
+    width: 241px;
     height: 32px;
     position: absolute;
     left: 61px;
@@ -105,47 +107,30 @@ body {
     .sidenav a {font-size: 18px;}
 }
 
-#tracker {
-    height: 350px;
-    margin-top: -205px;
-    margin-left: 90px;
-}
-
-#next-period{
-    margin-top:120px;
-    margin-left:-200px;
-    font-size: 16px;
-    text-align: center;
-}
-#month{
-    margin-top:-50px;
-    font-size:18px;
-    margin-bottom:55px;
-    margin-left:143px;
-}
 
 #curr{
-    font-size:18px;
-    margin-bottom:-17px;
-    letter-spacing:1px;
-    display:inline-block;
-    border-bottom:1.9px solid black;
-    padding-bottom:1.5px;
-    
+    color: #653c4b;
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left:30px;
+    margin-top:75px;
 }
 
-#calendar{
-    height:350px;
-    margin-top:-150px;
+#today{
+    margin-left:30px;
+    font-size:20px;
+    color: #653c4b;
 }
 
-#track {
-    margin-top:-150px;
-    margin-left:50px;
-    height:300px;
+#calories{
+    font-size:20px;
+    color:black;
+    margin-left:30px;
+    margin-top:10px;
 }
 
-.periodEntry .close {
+
+.foodEntry .close {
     position: absolute;
     top: 0;
     font-size: 36px;
@@ -154,31 +139,82 @@ body {
     color:white;
 }
 
-.periodEntry {
-    background-color:#c48aa3;
-    color: #653c4b;
+.foodEntry {
+    background-color: #ceb5c2;
+    display: none;
+    font-size:20px;
     border-radius:30px;
     text-align:center;
     width:180px;
-    height:240px;
-    padding-top:30px;
-    margin-left:100px;
-    margin-top:85px;
-    display: none;
+    height:200px;;
+    padding-top:40px;
+    margin-left:75px;
+    margin-top:-350px;
+    padding-bottom:20px;
     position: absolute;
     z-index: 9;
+    transform: translate(21px,-160px);
 }
-
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-
-.periodEntry input[type=text], .form-container input[type=password] {
-    border: none;
-    background: #f1f1f1;
-  }
 
 input {
     margin-bottom:8px;
 }
+
+#Breakfast{
+    margin-left:50px;
+    margin-top:20px;
+}
+
+#plate {
+    height: 150px;
+    margin-top:-95px;
+    margin-left: 190px;
+    margin-bottom:30px;
+}
+
+
+table{
+    text-align:center;
+    font-size:18px;
+    border-collapse: collapse;
+    border-radius:10px;
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px;
+  }
+  th:last-of-type {
+    border-top-right-radius: 10px;
+  }
+  tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+  }
+  tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+  }
+
+th{
+    background-color: #c48aa3;
+    color: #653c4b;
+    padding:6px 20px 6px 6px;
+}
+
+td{
+    padding:6px 20px 6px 6px;
+    
+    background-color: #ceb5c2;
+    color: #653c4b;
+    width:50%;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .col {
+    flex: 50%;
+    padding: 10px;
+  }

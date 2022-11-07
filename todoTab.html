@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Health Integration App</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="screen">
+    
+                <a href="textTab.html"><input type="button" value="Text" id="text" ></a>
+                <a href="choiceTab.html"><input type="button" value="Choices" id="choices"></a>
+                <a href="todoTab.html"><input type="button" value="To Do" id="todo"></a>
+                <br><br>
+                <h1>To-Do</h1>
+                <input type="text" id="task" placeholder="New entry...">
+                <input type="button" value="Add Task" class="addButton" onclick="newTask()" class="addButton"> 
+                <br><br>
+                <ul id="todoList">
+                    <li>Go to gym</li>
+                    <li >Make breakfast</li>
+                    <li>Do daily meditation</li>
+                    <li>Journal</li>
+                    <li>Book therapist appointment</li>
+                    <li>Go for 30 minute walk outside</li>
+                </ul>
+            </div>
+            <img src="iphone.jpg" alt="iphone" width="50" class="iphoneIMG">
+        </div>
+
+        <script>
+            // Modified from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo
+            var myNodelist = document.getElementsByTagName("LI");
+            var i;
+            for (i = 0; i < myNodelist.length; i++) {
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              myNodelist[i].appendChild(span);
+            }
+            
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+              }
+            }
+            
+            var list = document.querySelector('ul');
+            list.addEventListener('click', function(ev) {
+              if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+              }
+            }, false);
+            
+            // Create a new list item when clicking on the "Add" button
+            function newTask() {
+              var li = document.createElement("li");
+              var inputValue = document.getElementById("task").value;
+              var t = document.createTextNode(inputValue);
+              li.appendChild(t);
+              if (inputValue === '') {
+                alert("You must write something!");
+              } else {
+                document.getElementById("todoList").appendChild(li);
+              }
+              document.getElementById("task").value = "";
+            
+              var span = document.createElement("SPAN");
+              var txt = document.createTextNode("\u00D7");
+              span.className = "close";
+              span.appendChild(txt);
+              li.appendChild(span);
+            
+              for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                  var div = this.parentElement;
+                  div.style.display = "none";
+                }
+              }
+            }
+            </script>  
+    </body>
+</html>
