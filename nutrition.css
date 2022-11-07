@@ -7,11 +7,11 @@ body {
     width:375px;
     position: relative;
     z-index: 2;
-    top:-192px;
+    transform: translateY(400px);
 }
 
 #iphone{
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #f8f4f4;
     width: 375px;
     height: 691px;
     position: absolute;
@@ -156,6 +156,87 @@ body {
     transform: translate(21px,-160px);
 }
 
+.breakfastEntry .close {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    margin-left: 100px;
+    font-weight:10px;
+    color:white;
+}
+
+.breakfastEntry {
+    background-color: #ceb5c2;
+    display: none;
+    font-size:20px;
+    border-radius:30px;
+    text-align:center;
+    width:180px;
+    height:200px;;
+    padding-top:40px;
+    margin-left:75px;
+    margin-top:-310px;
+    padding-bottom:20px;
+    position: absolute;
+    z-index: 9;
+    transform: translate(21px,-160px);
+    color: #653c4b;
+}
+
+.lunchEntry .close {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    margin-left: 100px;
+    font-weight:10px;
+    color:white;
+}
+
+.lunchEntry {
+    background-color: #ceb5c2;
+    display: none;
+    font-size:20px;
+    border-radius:30px;
+    text-align:center;
+    width:180px;
+    height:200px;;
+    padding-top:40px;
+    margin-left:75px;
+    margin-top:-310px;
+    padding-bottom:20px;
+    position: absolute;
+    z-index: 9;
+    transform: translate(21px,-160px);
+    color: #653c4b;
+}
+
+.dinnerEntry .close {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    margin-left: 100px;
+    font-weight:10px;
+    color:white;
+}
+
+.dinnerEntry {
+    background-color: #ceb5c2;
+    display: none;
+    font-size:20px;
+    border-radius:30px;
+    text-align:center;
+    width:180px;
+    height:200px;;
+    padding-top:40px;
+    margin-left:75px;
+    margin-top:-310px;
+    padding-bottom:20px;
+    position: absolute;
+    z-index: 9;
+    transform: translate(21px,-160px);
+    color: #653c4b;
+}
+
 .waterEntry .close {
     position: absolute;
     top: 0;
@@ -180,6 +261,7 @@ body {
     position: absolute;
     z-index: 9;
     transform: translate(21px,-160px);
+    color: #653c4b;
 }
 
 .medicationEntry .close {
@@ -207,6 +289,7 @@ body {
     position: absolute;
     z-index: 9;
     transform: translate(21px,-180px);
+    color: #653c4b;
 }
 
 
@@ -272,3 +355,136 @@ td{
     flex: 50%;
     padding: 10px;
   }
+
+.submit{
+    background-color:#c48aa3;
+  color: #653c4b;
+  border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.submit:hover {
+    background-color: #653c4b;
+    color: #c48aa3;
+}
+
+.nutritionLog .close {
+    position: absolute;
+    top: 0;
+    right:20px;
+    font-size: 36px;
+    margin-left:10px;
+    font-weight:10px;
+    color:white;
+}
+
+.nutritionLog {
+    display: none;
+    background-color: #ceb5c2;
+    font-size:20px;
+    border-radius:30px;
+    text-align:center;
+    width:200px;
+    height:200px;;
+    padding-top:40px;
+    margin-left:80px;
+    margin-top:-310px;
+    padding-bottom:20px;
+    position: absolute;
+    z-index: 9;
+    transform: translate(21px,-180px);
+}
+
+.logBtn {
+    background-color:#ceb5c2; /* Blue background */
+    border: none; /* Remove borders */
+    color: #653c4b; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px;
+    border-radius: 8px;
+    width: 350px;
+    transform: translate(12px,45px);
+}
+
+.logBtn:hover {
+    background-color: #653c4b;
+    color: #c48aa3;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul li{
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    border-radius: 15px;
+    width:15.6rem;
+    padding: 12px 8px 12px 12px;
+    font-size: 15px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #653c4b;
+    border-radius: 5px;
+    background:#c48aa3;
+    overflow:scroll;
+    transform: translateY(-50px);
+    
+  }
+
+  li:nth-child(odd) {
+    background:#ceb5c2;
+  }
+
+  .nutritionLog {
+    display: none;
+    position: absolute;
+    transform: translate(-45px,-190px);
+    border: 2px solid #653c4b;
+    border-radius: 8px;
+    background-color: #f5e6e3;
+    overflow: scroll;
+    z-index: 9;
+    text-align:center;
+    color: #653c4b;
+    width: 300px;
+    height: 480px;
+    padding-left: 25px;
+  }
+  .nutrition-container {
+    background-color: #f5e6e3;
+    color: #653c4b;
+    
+    overflow: scroll;
+  }
+
+  #nutritionTitle{
+    transform: translate(-10px,-50px);
+  }
+
+  .nutritionLog .cancelNutrition{
+    background-color:#c48aa3;
+    color: #653c4b;
+    width: 140px;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+   
+    transform: translate(-15px,-20px);
+  }
+
+  .cancelNutrition:hover{
+    background-color: #653c4b;
+    color: #c48aa3;
+  }
+
+
+  
+  
