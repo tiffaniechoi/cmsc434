@@ -26,7 +26,7 @@
                                 <th>Breakfast</th>
                             </tr>
                             <tr>
-                                <td onClick="openForm()">Add Food</td>
+                                <td onClick="openBreakfastForm()">Add Food</td>
                             </tr>
                         </table>
                     </div>
@@ -36,7 +36,7 @@
                                 <th>Lunch</th>
                             </tr>
                             <tr>
-                                <td onClick="openForm()">Add Food</td>
+                                <td onClick="openLunchForm()">Add Food</td>
                             </tr>
                         </table>
                     </div>
@@ -48,7 +48,7 @@
                                 <th>Dinner</th>
                             </tr>
                             <tr>
-                                <td onClick="openForm()">Add Food</td>
+                                <td onClick="openDinnerForm()">Add Food</td>
                             </tr>
                         </table>
                     </div>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             
-            
+                <button type="button" class="logBtn" onclick="openNutrition()">Nutrition Log</button>
         </div>
         
         <div class="foodEntry" id="myForm">
@@ -86,43 +86,128 @@
                 <input type="text" id="food" name="food" onClick="openKeyboard()"><br>
                 <label for="calories">Calories:</label><br>
                 <input type="text" name="calories" onClick="openKeyboard()"><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+
+        <div class="breakfastEntry" id="breakfastForm">
+            <form>
+                <span class="close" onClick="closeBreakfastForm()">&times;</span>
+                <label for="food">Add Food:</label><br>
+                <input type="text" id="breakfast" name="food" onClick="openKeyboard()"><br>
+                <label for="calories">Calories:</label><br>
+                <input type="text" id="bfastCalories" name="bCal" onClick="openKeyboard()"><br>
+                <button type="button" class="submit" onclick="getBreakfast()">Submit</button>
+            </form>
+        </div>
+
+        <div class="lunchEntry" id="lunchForm">
+            <form>
+                <span class="close" onClick="closeLunchForm()">&times;</span>
+                <label for="food">Add Food:</label><br>
+                <input type="text" id="lunch" name="food" onClick="openKeyboard()"><br>
+                <label for="calories">Calories:</label><br>
+                <input type="text" id="lunchCalories" name="lCal" onClick="openKeyboard()"><br>
+                <button type="button" class="submit" onclick="getLunch()">Submit</button>
+            </form>
+        </div>
+
+        <div class="dinnerEntry" id="dinnerForm">
+            <form>
+                <span class="close" onClick="closeDinnerForm()">&times;</span>
+                <label for="food">Add Food:</label><br>
+                <input type="text" id="dinner" name="food" onClick="openKeyboard()"><br>
+                <label for="calories">Calories:</label><br>
+                <input type="text" id="dinnerCalories" name="dCal" onClick="openKeyboard()"><br>
+                <button type="button" class="submit" onclick="getDinner()">Submit</button>
             </form>
         </div>
 
         <div class="medicationEntry" id="medication">
             <form>
-                <span class="fr" onClick="closeMedication()">&times;</span>
+                <span class="close" onClick="closeMedication()">&times;</span>
                 <label for="food">Add Medication</label><br>
-                <input type="text" id="food" name="food" onClick="openKeyboard()"><br>
+                <input type="text" id="medicationItem" name="food" onClick="openKeyboard()"><br>
                 <label for="calories">Amount:</label><br>
-                <input type="text" name="calories" onClick="openKeyboard()" value="Milligrams" style="color:gray;text-align:center;"><br>
-                <input type="submit" value="Submit">
+                <input type="text" id="medicationAmount" name="medicationA" onClick="openKeyboard()" placeholder="Milligrams" style="color:gray;text-align:center;"><br>
+                <button type="button" class="submit" onclick="getMedication()">Submit</button>
             </form>
         </div>
         <div class="waterEntry" id="water">
             <form>
                 <span class="close" onClick="closeWater()">&times;</span>
                 <label for="calories">Add Water:</label><br>
-                <input type="text" name="calories" onClick="openKeyboard()" value="Ounces" style="color:gray;text-align:center;"><br>
-                <input type="submit" value="Submit">
+                <input type="text" id="waterAmount" name="waterA" onClick="openKeyboard()" placeholder="Ounces" style="color:gray;text-align:center;"><br>
+                <button type="button" class="submit" onclick="getWater()">Submit</button>
             </form>
         </div>
 
+        <div class="nutritionLog" id="nutritionLogList">
+            <div class="nutrition-container"></div>
+                <h1 id="nutritionTitle">Nutrition Log</h1> 
+                    <ul id="list">
+                        <li>11/6/22<br> Breakfast: Egg and toast <br> Lunch: Ramen <br> Dinner: Steak and potatoes <br> Medication: None</li>
+                        <li >11/5/22<br> Breakfast: Avocado toast <br> Lunch: Pasta <br> Dinner: Tacos<br> Medication: Lexapro</li>
+                        <li>11/4/22<br>Breakfast: Pancakes <br> Lunch: Fried chicken <br> Dinner: Burger King <br> Medication: Advil</li>
+                    </ul>
+            
+                    <br>
+                
+                <button type="button" class="cancelNutrition" onclick="closeNutrition()">Close</button>
+            </div>
+            
+        </div>
 
         <img src="images/keyboard.png" id="keyboard" style="display:none;">
-
-    </div>
-    <div id="mySidenav" class="sidenav" style="z-index:9;">
+        <div id="mySidenav" class="sidenav" style="z-index:9;margin-bottom:20px;">
             <a href="javascript:void(0)" class="closebtn" onClick="closeNav()">&times;</a>
             <a href="index.html">Home</a>
             <a href="mental.html">Mental</a>
             <a href="physical.html">Physical</a>
             <a href="menstrual.html">Menstrual</a>
         </div>
+    </div>
+    
 </body>
 
 <script>
+    let breakfast;
+    let bCal;
+    let lunch;
+    let lCal;
+    let dinner;
+    let dCal;
+    let medication;
+    let medAmount;
+    let wAmount;
+
+    function getBreakfast(){
+        breakfast = document.getElementById("breakfast").value;
+        bCal = document.getElementById("bfastCalories").value;
+        closeBreakfastForm();
+    }
+    function getLunch(){
+        lunch = document.getElementById("lunch").value;
+        lCal = document.getElementById("lunchCalories").value
+        closeLunchForm();
+    }
+    function getDinner(){
+        dinner = document.getElementById("dinner").value;
+        dCal = document.getElementById("dinnerCalories").value
+        closeDinnerForm();
+    }
+
+    function getWater(){
+        wAmount = document.getElementById("waterAmount").value;
+        closeWater();
+    }
+
+    function getMedication(){
+        medication = document.getElementById("medicationItem").value;
+        medAmount = document.getElementById("medicationAmount").value;
+        closeMedication();
+    }
+
     function openWater(){
         document.getElementById('keyboard').style.display='block';
         document.getElementById("water").style.display = "block";
@@ -154,15 +239,54 @@
         document.getElementById('keyboard').style.display='block';
     }
 
-    function openForm() {
+   /*  function openForm() {
         document.getElementById('keyboard').style.display='block';
         document.getElementById("myForm").style.display = "block";
         document.getElementById("content").style.opacity = "0";
+    } */
+
+    function openBreakfastForm() {
+        document.getElementById('keyboard').style.display='block';
+        document.getElementById("breakfastForm").style.display = "block";
+        document.getElementById("content").style.opacity = "0";
     }
 
-    function closeForm() {
+    function openLunchForm() {
+        document.getElementById('keyboard').style.display='block';
+        document.getElementById("lunchForm").style.display = "block";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+    function openDinnerForm() {
+        document.getElementById('keyboard').style.display='block';
+        document.getElementById("dinnerForm").style.display = "block";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+  /*   function closeForm() {
         document.getElementById('keyboard').style.display='none';
         document.getElementById("myForm").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    } */
+
+    function closeBreakfastForm() {
+        document.getElementById('keyboard').style.display='none';
+        document.getElementById("breakfastForm").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
+    function closeLunchForm() {
+        document.getElementById('keyboard').style.display='none';
+        document.getElementById("lunchForm").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
+    function closeDinnerForm() {
+        document.getElementById('keyboard').style.display='none';
+        document.getElementById("dinnerForm").style.display = "none";
         document.getElementById("title").style.opacity = "1";
         document.getElementById("content").style.opacity = "1";
     }
@@ -176,6 +300,30 @@
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
     }
+
+    function openNutrition(){
+        document.getElementById("nutritionLogList").style.display = "block";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+    function closeNutrition(){
+        document.getElementById("nutritionLogList").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
+    function newLog() {
+        var list = document.getElementById("list");
+        var listItem = document.createElement("li");
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        listItem.innerHTML= month + "/" + day + "/" + year + "<br>" +" Breakfast: " + breakfast + " (" + bCal + ")" + "<br> Lunch: " + lunch + " (" + lCal + ")"
+         +"<br> Dinner: " + dinner + " (" + dCal + ")" +"<br> Medication: " + medication + " (" + medAmount + ")" +"<br>Water: " +  wAmount + " Ounces" 
+        list.insertBefore(listItem, list.firstChild);
+    }
 </script>
+
 
 

@@ -153,6 +153,7 @@ body {
     margin-left: 100px;
     font-weight:10px;
     color:white;
+    
 }
 
 .periodEntry {
@@ -182,4 +183,17 @@ body {
 
 input {
     margin-bottom:8px;
+}
+
+#submit{
+    background-color:#ceb5c2; /* Blue background */
+    border: none; /* Remove borders */
+    color: #653c4b;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#submit:hover{
+    color:#ceb5c2;
+    background-color:#653c4b;
 }
