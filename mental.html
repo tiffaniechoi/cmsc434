@@ -25,37 +25,85 @@
                 <i id="fa" class="fa-regular fa-face-sad-cry" style="color: #c88eac;"></i>
                 <i id="fa" class="fa-regular fa-face-angry" style="color: gray;"></i>
                 <br><br>
+
+                
                 <div class="data">
                     &ensp;&ensp; &ensp;&ensp;&ensp;&ensp; <span style="color: #653c4b">Current Mood: Sad</span> <br><br>
                 </div>
                 <div id="dataDisplay1">
-                    <span style="color: #653c4b;">Upcoming Appointments:</span> <br> <br>Doctor's Appointment <br>
-                        <span style="color: #653c4b">When:</span> Dec 22nd, 2022 at 12pm <br>
-                            <span style="color: #653c4b">Where:</span> 4200 Laurel Ave <br>
+                    <span style="color: #653c4b;">Goals Status</span> <br> <br>
+                        <span style="color: #653c4b">Eat dinner:</span> Success! <br>
+                            <span style="color: #653c4b">Stop crying in public:</span> In Progress<br>
                 </div><br>
-
                 <div id="dataDisplay">
-                    Entry <br><br>
-                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Daily Journal Entry</button>&ensp;
-                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;Create Appointment</button>
+                    Journal Entry <br><br>
+                    <button onclick="openKeyboard()" class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;<br>Create Entry</button>&ensp;
+                    <button onclick="openEntries()" class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;<br>View Entries</button>
                     <br><br>
-                    Reminders<br><br>
-                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;View Appointments</button> &ensp;
-                    <button class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;View Tasks</button> &emsp;&ensp;
+                    My Goals <br><br>
+                    <button onclick="openKeyboard()" class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;<br>New Goals</button> &ensp;
+                    <button onclick="openGoals()" class="btn"><i class="fa-solid fa-circle-plus"></i>&ensp;<br>View Goals</button> &emsp;&ensp;
+                </div>
+                <div id="keyboard"></div>
+                <div>
+                </div>
+                <div id="entries">
+                </div>
+                <div id="goals">
                 </div>
       </div>
     </div>
-    
     </div>
   </body>
   <script>
+   function closeKeyboard() {
+        document.getElementById('keyboard').innerHTML="";
+    }
+    function openKeyboard(){
+        document.getElementById('keyboard').innerHTML="<img src='images/keyboard.png' class='keyboard' onclick='closeKeyboard()'><input type='text' style='top: 5px;width:310px; height: 340px; background-color: #f5e6e3; position: absolute;''>";
+    }
+
+    function openEntries(){
+      document.getElementById('entries').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Entries<br><li>Dec 2020</li><li>Jan 2021</li><li>Feb 2021</li><li>March 2021</li><li>April 2021</li><li>May 2021</li><li>June 2021</li><li>July 2021</li><br><input type='button' class='btn' onclick=closeEntry() value='close'></div><br>";
+    }
+
+    function closeEntry() {
+        document.getElementById('entries').innerHTML="";
+    }
+
+    function openGoals(){
+      document.getElementById('goals').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Goals<br><li>Be happy</li><li>Dont be sad</li><li>Eat 3 meals a day</li><li>Study</li><li>Have fun</li><li>Call mom</li><li>Call meemaw</li><li>Love urself</li><br><input type='button' class='btn' onclick=closeGoals() value='close'></div><br>";
+    }
+
+    function closeGoals() {
+      document.getElementById('goals').innerHTML="";    
+    }
+
+    
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("title").style.opacity = "0";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+    function closeForm() {
+        document.getElementById('keyboard').style.visibility='hidden';
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("title").style.opacity = "0";
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("title").style.opacity = "0";
+        document.getElementById("content").style.opacity = "0";
     }
 
     function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("title").style.opacity = "1";
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
     }
   </script>
+
+

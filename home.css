@@ -413,6 +413,9 @@ body {
     background-color:#c48aa3;
   }
 
-
-
-  
+.keyboard {
+  position: absolute;
+  top: 350px;
+  width: 319px;
+  height: 250px;
+}
