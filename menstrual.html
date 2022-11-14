@@ -20,7 +20,7 @@
                     Period starts <br>tomorrow</div>
                     <img src = "images/tracker.png" id = "tracker">
                     <h1 id="month">November</h1>
-                    <img src="images/calendar.png" id="calendar">
+                    <img src="images/calendar.png" id="calendar" onClick="openLog()">
                     <img src="images/track.png" id="track" onClick="openForm()">
             </div>
         </div>
@@ -42,8 +42,26 @@
                 <input type="text" id="energy" name="energy" onClick="openKeyboard()"><br>
                 <label for="emotions">Emotions:</label><br>
                 <input type="text" id="emotions" name="emotions" onClick="openKeyboard()"><br>
-                <input type="submit" value="Submit" id="submit">
+                <input type="submit" value="Submit" id="submit" onClick="getInfo()">
             </form>
+        </div>
+        <div class="nutritionLog" id="nutritionLogList">
+            <div class="nutrition-container"></div>
+                <h1 id="nutritionTitle">Period Log</h1> 
+                    <ul id="list">
+                        <li>11/5/22<br> Bleeding: Heavy <br> Pain: None <br> Energy: Low <br> Emotions: Sad</li>
+                        <li>11/6/22<br> Bleeding: Heavy <br> Pain: Mild <br> Energy: Low <br> Emotions: Sad</li>
+                        <li>11/7/22<br> Bleeding: Heavy <br> Pain: None <br> Energy: Regular <br> Emotions: Regular</li>
+                        <li>11/8/22<br> Bleeding: Medium <br> Pain: None <br> Energy: Regular <br> Emotions: Regular</li>
+                        <li>11/9/22<br> Bleeding: Medium <br> Pain: None <br> Energy: Regular <br> Emotions: Regular</li>
+                        <li>11/7/22<br> Bleeding: Spotting <br> Pain: None <br> Energy: Regular <br> Emotions: Regular</li>
+                    </ul>
+            
+                    <br>
+                
+                <button type="button" class="cancelNutrition" onclick="closeLog()">Close</button>
+            </div>
+            
         </div>
         <img src="images/keyboard.png" id="keyboard">
 
@@ -51,6 +69,18 @@
 </body>
 
 <script>
+    let bleeding;
+    let pain;
+    let energy;
+    let emotions;
+
+    function getInfo(){
+        bleeding = document.getElementById("bleeding").value;
+        pain = document.getElementById("pain").value; 
+        energy = document.getElementById("energy").value; 
+        emotions = document.getElementById("emotions").value; 
+        getInfo();
+    }
     function closeKeyboard() {
         document.getElementById('keyboard').style.display='none';
     }
@@ -79,5 +109,28 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("title").style.opacity = "1";
+    }
+
+    function openLog(){
+        document.getElementById("nutritionLogList").style.display = "block";
+        document.getElementById("content").style.opacity = "0";
+    }
+
+    function closeLog(){
+        document.getElementById("nutritionLogList").style.display = "none";
+        document.getElementById("title").style.opacity = "1";
+        document.getElementById("content").style.opacity = "1";
+    }
+
+    function newLog() {
+        var list = document.getElementById("list");
+        var listItem = document.createElement("li");
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        listItem.innerHTML= month + "/" + day + "/" + year + "<br>" +"Bleeding: " + bleeding + "<br> Pain: " + pain 
+         +"<br> Energy: " + energy +"<br> Emotions: " + emotions 
+        list.insertBefore(listItem, list.firstChild);
     }
 </script>
