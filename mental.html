@@ -20,13 +20,12 @@
         <div class="home">
           <div id="date">Today: Nov 7, 2022</div><br>
           &ensp;
+                <i id="fa" class="fa-regular fa-face-laugh-beam" style="color: gray;"></i>
                 <i id="fa" class="fa-regular fa-face-smile" style="color: gray;"></i>
                 <i id="fa" class="fa-regular fa-face-meh" style="color: gray;"></i>
                 <i id="fa" class="fa-regular fa-face-sad-cry" style="color: #c88eac;"></i>
                 <i id="fa" class="fa-regular fa-face-angry" style="color: gray;"></i>
                 <br><br>
-
-                
                 <div class="data">
                     &ensp;&ensp; &ensp;&ensp;&ensp;&ensp; <span style="color: #653c4b">Current Mood: Sad</span> <br><br>
                 </div>
@@ -59,12 +58,13 @@
    function closeKeyboard() {
         document.getElementById('keyboard').innerHTML="";
     }
+    
     function openKeyboard(){
         document.getElementById('keyboard').innerHTML="<img src='images/keyboard.png' class='keyboard' onclick='closeKeyboard()'><input type='text' style='top: 5px;width:310px; height: 340px; background-color: #f5e6e3; position: absolute;''>";
     }
 
     function openEntries(){
-      document.getElementById('entries').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Entries<br><li>Dec 2020</li><li>Jan 2021</li><li>Feb 2021</li><li>March 2021</li><li>April 2021</li><li>May 2021</li><li>June 2021</li><li>July 2021</li><br><input type='button' class='btn' onclick=closeEntry() value='close'></div><br>";
+      document.getElementById('entries').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Entries<br><table border='1'cellpadding='15'><tr class='btn'><td>Entry #1: Feeling sad.... like really sad</td></tr><tr class='btn'><td>Entry #2: Feeling a bit better.... like not really sad</td></tr><tr class='btn'><td>Entry #3: Did not eat today, sigh want to leave schooool.</td></tr><tr class='btn'><td>Entry #4: Saw vids of this monkey named xing xing, she was amazing.</td></tr><tr class='btn'><td>Entry #5: Deleted tik tok, lets see if things get better</td></tr></table><br><input type='button' class='btn' onclick=closeEntry() value='close'></div><br>";      
     }
 
     function closeEntry() {
@@ -72,9 +72,8 @@
     }
 
     function openGoals(){
-      document.getElementById('goals').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Goals<br><li>Be happy</li><li>Dont be sad</li><li>Eat 3 meals a day</li><li>Study</li><li>Have fun</li><li>Call mom</li><li>Call meemaw</li><li>Love urself</li><br><input type='button' class='btn' onclick=closeGoals() value='close'></div><br>";
+      document.getElementById('goals').innerHTML="<div id='dataDisplay' style='height: 500px; top: 40px; position: absolute;'>Goals<br><table border='1'cellpadding='15'><tr class='btn'><td>Goal #1: Workout More<br><select name='status'><br><option>Accomplished</option><<option>In Progress</option><option>Not Started</option></select></td></tr><tr class='btn'><td>Goal #2: Eat a balanced diet<br><select name='status'><option>Accomplished</option><option>In Progress</option><option>Not Started</option></select></td></tr><tr class='btn'><td>Goal #3: Stop crying in public<br><select name='status'><option>Accomplished</option><option>In Progress</option><option>Not Started</option></select></td></tr><tr class='btn'><td>Goal #4: Try new things<br><select name='status'><option>Accomplished</option><option>In Progress</option><option>Not Started</option></select></td></tr><tr class='btn'><td>Goal #5: Walk 10k steps a day<br><select name='status'><option>Accomplished</option><option>In Progress</option><option>Not Started</option></select></td></tr><tr class='btn'><td>Goal #6: Stop spending money<br><select name='status'><option>Accomplished</option><option>In Progress</option><option>Not Started</option></select></td></tr></table><br><input type='button' class='btn' onclick=closeGoals() value='close'></div><br>";    
     }
-
     function closeGoals() {
       document.getElementById('goals').innerHTML="";    
     }
